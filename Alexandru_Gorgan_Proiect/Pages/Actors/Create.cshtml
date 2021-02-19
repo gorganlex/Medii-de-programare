@@ -1,0 +1,41 @@
+﻿@page
+@model Alexandru_Gorgan_Proiect.Pages.Actors.CreateModel
+
+@{
+    ViewData["Title"] = "Create Actor";
+}
+
+<h1>Create New Actor</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Actor.Nume" class="control-label"></label>
+                <input asp-for="Actor.Nume" class="form-control" />
+                <span asp-validation-for="Actor.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.Prenume" class="control-label"></label>
+                <input asp-for="Actor.Prenume" class="form-control" />
+                <span asp-validation-for="Actor.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor.FilmID" class="control-label"></label>
+                <select asp-for="Actor.FilmID" class ="form-control" asp-items="ViewBag.FilmID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

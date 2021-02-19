@@ -1,0 +1,29 @@
+﻿@page
+@model Alexandru_Gorgan_Proiect.Pages.Cinemas.DetailsModel
+
+@{
+    ViewData["Title"] = "Cinema Details";
+}
+
+<h1>Cinema Details</h1>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cinema.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cinema.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cinema.Film)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cinema.Film.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Cinema.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
